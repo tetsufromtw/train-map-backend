@@ -1,0 +1,113 @@
+{
+  "companies_list": {
+    "description": "会社一覧レスポンス例（ページネーション付き）",
+    "response": {
+      "data": [
+        {
+          "companyCode": 1,
+          "railwayCode": 11,
+          "companyName": "JR北海道",
+          "companyNameKana": "ジェイアールホッカイドウ",
+          "companyNameOfficial": "北海道旅客鉄道株式会社",
+          "companyNameAbbreviated": "JR北海道",
+          "companyUrl": "http://www.jrhokkaido.co.jp/",
+          "companyType": 1,
+          "status": 0,
+          "sortOrder": 1
+        },
+        {
+          "companyCode": 2,
+          "railwayCode": 11,
+          "companyName": "JR東日本",
+          "companyNameKana": "ジェイアールヒガシニホン",
+          "companyNameOfficial": "東日本旅客鉄道株式会社",
+          "companyNameAbbreviated": "JR東日本",
+          "companyUrl": "http://www.jreast.co.jp/",
+          "companyType": 1,
+          "status": 0,
+          "sortOrder": 2
+        }
+      ],
+      "total": 175,
+      "page": 1,
+      "limit": 10,
+      "totalPages": 18
+    }
+  },
+  "company_detail": {
+    "description": "会社詳細レスポンス例",
+    "response": {
+      "companyCode": 1,
+      "railwayCode": 11,
+      "companyName": "JR北海道",
+      "companyNameKana": "ジェイアールホッカイドウ",
+      "companyNameOfficial": "北海道旅客鉄道株式会社",
+      "companyNameAbbreviated": "JR北海道",
+      "companyUrl": "http://www.jrhokkaido.co.jp/",
+      "companyType": 1,
+      "status": 0,
+      "sortOrder": 1
+    }
+  },
+  "company_types": {
+    "description": "事業者区分一覧",
+    "response": [
+      { "value": 0, "label": "その他" },
+      { "value": 1, "label": "JR" },
+      { "value": 2, "label": "大手私鉄" },
+      { "value": 3, "label": "準大手私鉄" }
+    ]
+  },
+  "company_statuses": {
+    "description": "運用状態一覧",
+    "response": [
+      { "value": 0, "label": "運用中" },
+      { "value": 1, "label": "運用前" },
+      { "value": 2, "label": "廃止" }
+    ]
+  },
+  "error_responses": {
+    "description": "エラーレスポンス例",
+    "validation_error": {
+      "statusCode": 400,
+      "message": [
+        "companyName should not be empty",
+        "railwayCode must be between 10 and 99"
+      ],
+      "error": "Bad Request"
+    },
+    "not_found": {
+      "statusCode": 404,
+      "message": "Company with code 999 not found",
+      "error": "Not Found"
+    },
+    "duplicate_error": {
+      "statusCode": 400,
+      "message": "Company with code 1 already exists",
+      "error": "Bad Request"
+    }
+  },
+  "create_request": {
+    "description": "新規作成リクエスト例",
+    "request": {
+      "companyCode": 999,
+      "railwayCode": 99,
+      "companyName": "新規鉄道会社",
+      "companyNameKana": "シンキテツドウガイシャ",
+      "companyNameOfficial": "新規鉄道株式会社",
+      "companyNameAbbreviated": "新規鉄道",
+      "companyUrl": "http://www.example.com/",
+      "companyType": 0,
+      "status": 1,
+      "sortOrder": 999
+    }
+  },
+  "update_request": {
+    "description": "更新リクエスト例（部分更新）",
+    "request": {
+      "companyName": "更新された会社名",
+      "status": 0,
+      "companyUrl": "http://www.updated-url.com/"
+    }
+  }
+}
